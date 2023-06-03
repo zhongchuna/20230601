@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import co.jp.ygcBook.dao.HobbyDAO;
 import co.jp.ygcBook.dao.UserInfoDAO;
+import co.jp.ygcBook.entity.Hobby;
 import co.jp.ygcBook.entity.UserInfo;
 
 
-public class UserRegisterServlet extends HttpServlet {
+public class UserRegisterServlet<foreach> extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,49 +41,37 @@ public class UserRegisterServlet extends HttpServlet {
 		
 		boolean flg = userinfoDAO.save(userInfo);
 		
+		 //爱好
+		String[] hobbyArray = request.getParameterValues("hobby");
+		
+			
+				
+				Hobby hobby = new Hobby();
+				hobby.setUsername(username);
+				hobby.setHobbyArray(hobbyArray);
+			
+			
+			HobbyDAO hobbyDao =new HobbyDAO();
+			boolean hobbyFlag = hobbyDao.insertHObby(hobby);
+		
+		
+		
+		if(hobbyFlag) {
+			System.out.println("爱好表插入成功，问题不大");
+		}else {
+			System.out.println("爱好表插入失败，问题不大");
+		}
+
+		
+		
 		if(flg = true){
 			request.getRequestDispatcher("/userSearchSuccess.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("/userSearchErr.jsp").forward(request, response);
 		 }
 		
-		// 爱好
-		//String[] hobbyArray = request.getParameterValues("hobby");
 
-//		List<Hobby> hobbyList = new ArrayList<>();
-//		
-//		for (String rs : hobbyArray) {
-//			
-//			Hobby hobby = new Hobby(); 
-//			hobby.setUsername(username);
-//			hobby.setHoppy(rs);
-//			hobbyList.add(hobby);
-//			
-//		}
-//		
-//		HobbyDAO hobbyDao = new HobbyDAO();
-//		boolean hobbyFlag = hobbyDao.save(hobbyList);
-//		
-//		if(hobbyFlag) {
-//			System.out.println("爱好表插入成功，问题不大");
-//		}else {
-//			System.out.println("爱好表插入失败，问题不大");
-//		}
-//
-//		
-//		
-//		UserInfoDAO userinfoDAO = new UserInfoDAO();
-//
-//		UserInfo userInfo = new UserInfo();
-//		userInfo.setUsername(username);
-//		userInfo.setPassword(password);
-//		userInfo.setSex(sex);
-//		userInfo.setMajor(major);
-//		userInfo.setIntro(intro);
-//		
-//		
-
-//		
+	
 	}
 
 	@Override

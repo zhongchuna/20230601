@@ -25,10 +25,10 @@
             <option value="2">体育</option>
         </select><br><br>
 
-        <label for="hobbies">爱好:</label>
-        <input type="checkbox" id="basketball" name="hobbies" value="篮球">篮球
-        <input type="checkbox" id="football" name="hobbies" value="足球">足球
-        <input type="checkbox" id="tennis" name="hobbies" value="网球">网球<br><br>
+        <label for="hobby">爱好:</label>
+        <input type="checkbox" id="basketball" name="hobby" value="1">篮球
+        <input type="checkbox" id="football" name="hobby" value="2">足球
+        <input type="checkbox" id="tennis" name="hobby" value="3">网球<br><br>
 
         <label for="intro">简介:</label><br>
         <textarea id="intro" name="intro" rows="4" cols="50"></textarea><br><br>
