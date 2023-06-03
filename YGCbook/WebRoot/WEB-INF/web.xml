@@ -317,7 +317,20 @@
     <servlet-class>cn.key.servlet.frontgroundServlet.ChangeServlet</servlet-class>
   </servlet>
 
+<!-- 
 
+ -->
+ <servlet>
+    <servlet-name>UserRegisterServlet</servlet-name>
+    <servlet-class>co.jp.ygcBook.servlet.UserRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserRegisterServlet</servlet-name>
+    <url-pattern>/userRegister</url-pattern>
+  </servlet-mapping>
+    <!-- 
+�û�ע�ử���ʼ��END
+ -->
 
 
 

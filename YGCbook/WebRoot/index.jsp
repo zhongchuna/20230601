@@ -30,6 +30,9 @@
 		int i = 0;
 		BookInfo book = null;
 	%>
+	
+	<input type ="button"  value="新会员注册" onclick="window.location.href='userRegister.jsp'"></button>
+	
     <td> 
       <table width="100%" border="0" cellpadding="0" cellspacing="0">
         <tr valign="top"> 
@@ -369,7 +372,7 @@
     <td><a href="http://www.qybook.com"><img src="<%=request.getContextPath()%>/images/dd-009.gif" width="36" height="40" alt="logo" border="0"></a></td>
     <td class="wr4" width="10">&nbsp;</td>
     <td class="wr4"> 版权所有：<a href="http://www.qingyun.com" target="_blank">西安云工厂科技文化图书有限责任公司</a><br>
-      地址：西安市玉祥门华豪丽都　服务电话：13772086697</td>
+      地址：西安市玉祥门华豪丽都　服务电话：13772086698</td>
   </tr>
 </table>
 </body>
