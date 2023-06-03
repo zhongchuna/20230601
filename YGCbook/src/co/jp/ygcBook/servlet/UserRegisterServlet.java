@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.jp.netwisdom.dao.HobbyDAO;
-import co.jp.netwisdom.dao.UserInfoDAO;
-import co.jp.netwisdom.entity.Hobby;
-import co.jp.netwisdom.entity.UserInfo;
+
+import co.jp.ygcBook.dao.UserInfoDAO;
+import co.jp.ygcBook.entity.UserInfo;
+
 
 public class UserRegisterServlet extends HttpServlet {
 
@@ -29,7 +29,22 @@ public class UserRegisterServlet extends HttpServlet {
 		// 简介
 		String intro = request.getParameter("intro");
 		
+		UserInfoDAO userinfoDAO = new UserInfoDAO();
 		
+		UserInfo userInfo = new UserInfo();
+		userInfo.setUsername(username);
+		userInfo.setPassword(password);
+		userInfo.setGender(gender);
+		userInfo.setMajor(major);
+		userInfo.setIntro(intro);
+		
+		boolean flg = userinfoDAO.save(userInfo);
+		
+		if(flg = true){
+			request.getRequestDispatcher("/userSearchSuccess.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("/userSearchErr.jsp").forward(request, response);
+		 }
 		
 		// 爱好
 		//String[] hobbyArray = request.getParameterValues("hobby");
@@ -66,13 +81,7 @@ public class UserRegisterServlet extends HttpServlet {
 //		userInfo.setIntro(intro);
 //		
 //		
-//		boolean flg = userinfoDAO.save(userInfo);
-//		
-//		if(flg = true){
-//			request.getRequestDispatcher("/userSearchSuccess.jsp").forward(request, response);
-//		}else {
-//			request.getRequestDispatcher("/userSearchErr.jsp").forward(request, response);
-//		 }
+
 //		
 	}
 
