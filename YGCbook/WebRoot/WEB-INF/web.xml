@@ -328,6 +328,20 @@
     <servlet-name>UserRegisterServlet</servlet-name>
     <url-pattern>/userRegister</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>co.jp.ygcBook.servlet.SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
     <!-- 
 �û�ע�ử���ʼ��END
  -->

@@ -13,8 +13,8 @@ public class HobbyDAO {
 	public boolean insertHObby (Hobby hobby) {
 		int row = 0;
 		String sql = "insert into hobby values(?,?,0)";
-		for(int i =0;i<hobby.getHobbyArray().length;i++) {
-
+		for (int i =0;i < hobby.getHobbyArray().length;i++) {
+			
 			Object[] values = new Object[]{hobby.getUsername(),hobby.getHobbyArray()[i]};
 
 			try {
@@ -25,6 +25,8 @@ public class HobbyDAO {
 				e.printStackTrace();
 			}
 		}
+		
+
 				return row == hobby.getHobbyArray(). length;
 	}
 }

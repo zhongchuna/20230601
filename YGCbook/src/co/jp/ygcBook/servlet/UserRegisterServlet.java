@@ -15,7 +15,7 @@ import co.jp.ygcBook.entity.Hobby;
 import co.jp.ygcBook.entity.UserInfo;
 
 
-public class UserRegisterServlet<foreach> extends HttpServlet {
+public class UserRegisterServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

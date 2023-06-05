@@ -32,5 +32,14 @@ public class UserInfoDAO {
 		}
 		return (row == 1);
 	}
+	//搜索机能的方法
+	public boolean select(UserInfo userinfo) {
+		
+		String sql = "select * from userinfo where delflg = '0'";
+		
+		
+		return true;
+	}
+	
 }
 
