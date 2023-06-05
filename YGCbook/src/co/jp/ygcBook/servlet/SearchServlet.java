@@ -27,7 +27,7 @@ public class SearchServlet extends HttpServlet {
 		String major = request.getParameter("major");
 		
 		UserInfoDAO userinfoDAO = new UserInfoDAO();
-		userinfoDAO.select(null);
+		userinfoDAO.select(username,gender,major);
 	
 	}
 

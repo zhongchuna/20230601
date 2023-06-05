@@ -13,6 +13,7 @@
         
         <label for="gender">性别:</label>
         <select id="gender" name="gender">
+        	<option value=""></option>
             <option value="1">男</option>
             <option value="2">女</option>
         </select>
@@ -22,9 +23,9 @@
         <select
 			id="major" name="major">
 			<option value=""></option>
-			<option value="0">软件工程</option>
-			<option value="1">英语</option>
-			<option value="2">数学</option>
+			<option value="1">软件工程</option>
+			<option value="2">英语</option>
+			<option value="3">数学</option>
 		</select><br> 
         <br><br>
         

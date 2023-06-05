@@ -1,6 +1,7 @@
 package co.jp.ygcBook.entity;
 
 public class UserInfo {
+	
 	private  String username;
 	private String password;
 	private  String gender;
@@ -49,6 +50,11 @@ public class UserInfo {
 		
 	}
 	
-	
+	public UserInfo(String username, String gender, String major) {
+		super();
+		this.username = username;
+		this.gender = gender;
+		this.major = major;
+	}
 
 }
