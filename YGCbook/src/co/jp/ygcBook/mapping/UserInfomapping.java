@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import cn.key.dbManager.IResultSetMapping;
-import co.jp.netwisdom.entity.UserInfoHobby;
+
 import co.jp.ygcBook.entity.UserInfo;
 
 public class UserInfomapping implements IResultSetMapping {

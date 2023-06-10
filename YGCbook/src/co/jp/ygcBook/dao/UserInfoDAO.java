@@ -35,12 +35,12 @@ public class UserInfoDAO {
 
 		// 如果username存在，那么就把username放入sql文当中作为筛选条件
 		if (!"".equals(username)) {
-			sql = sql + " and username ='" + username + "' and";
+			sql = sql + " and username ='" + username + "'";
 		}
 
 		// sex为前台必传的，那么不用判断是否为空字符串，直接放入sql文当中作为筛选条件
-		if (!"".equals(username)) {
-			sql = sql + " gender ='" + gender + "'";
+		if (!"".equals(gender)) {
+			sql = sql + " and gender ='" + gender + "' ";
 		}
 		
 		// 如果major存在，那么就把major放入sql文当中作为筛选条件

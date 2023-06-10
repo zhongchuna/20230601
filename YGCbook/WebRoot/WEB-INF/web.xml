@@ -335,7 +335,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchServlet</servlet-name>
-    <url-pattern>/search</url-pattern>
+    <url-pattern>/newSearch</url-pattern>
   </servlet-mapping>
   
   
