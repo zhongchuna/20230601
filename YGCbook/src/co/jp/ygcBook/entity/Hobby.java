@@ -32,6 +32,11 @@ public class Hobby {
 		super();
 		
 	}
+	public Hobby(String username, String hobby) {
+		super();
+		this.username = username;
+		this.hobby = hobby;
+	}
 	
 
 

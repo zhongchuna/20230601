@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <%@page import="co.jp.ygcBook.dao.UserInfoDAO"%>
 <%@page import="co.jp.ygcBook.entity.UserInfo"%>
-
+<%@page import="co.jp.ygcBook.dao.HobbyDAO"%>
+<%@page import="co.jp.ygcBook.entity.Hobby"%>
  <%
  List<UserInfo> list = (List<UserInfo>) request.getAttribute("data");
 %>
+ <%
+List<Hobby> hobbylist = (List<Hobby>)request.getAttribute("data1");
+ %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -39,11 +43,11 @@
     <h2>搜索结果</h2>
     <table border="1">
         <tr>
-        <%if(list != null){%>
+        <%if(list != null && hobbylist != null){%>
             <th>姓名</th>
             <th>性别</th>
             <th>专业</th>
-            <!-- <th>爱好</th> -->
+            <th>爱好</th>
             <th>简介</th>
         </tr>
         <% for (UserInfo userInfo : list) { %>
@@ -51,7 +55,15 @@
                 <td><%= userInfo.getUsername()%></td>
                 <td><%= userInfo.getGender().toString().replace("0", "男").replace("1", "女") %></td>
                 <td><%= userInfo.getMajor().toString().replace("0", "英语").replace("1", "数学").replace("2", "体育")  %></td>
-                <td><%= userInfo.getIntro() %></td>
+                <%if(hobbylist != null){%>
+                <% for (Hobby hobby : hobbylist) { %>
+                	<%if(userInfo.getUsername().equals(hobby.getUsername())){ %>
+                		<td><%= hobby.getHobby().replace("1", "足球").replace("2", "篮球").replace("3", "网球")%></td>
+                	<%} %>
+                
+                <% } %> 
+                <% } %> 
+                <td><%= userInfo.getIntro()%></td>
             </tr>
         <% } %> 
         <% } %> 
