@@ -35,7 +35,7 @@ public class UserInfoDAO {
 
 		// 如果username存在，那么就把username放入sql文当中作为筛选条件
 		if (!"".equals(username)) {
-			sql = sql + " and username ='" + username + "'";
+			sql = sql + " and username LIKE '%" + username + "%'";
 		}
 
 		// sex为前台必传的，那么不用判断是否为空字符串，直接放入sql文当中作为筛选条件
@@ -56,5 +56,22 @@ public class UserInfoDAO {
 
 		return list;
 	}
+	
+	
+	// 搜索机能的方法
+	public UserInfo select(String username) {
+
+		String sql = "select * from userinfo where username ='" + username + "'";
+
+		List<UserInfo> list = new ArrayList<UserInfo>();
+		try {
+			list = template.selete(sql, new UserInfoMapping());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list.get(0);
+	}
+
 
 }

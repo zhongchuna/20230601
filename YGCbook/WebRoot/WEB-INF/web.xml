@@ -339,6 +339,17 @@
   </servlet-mapping>
   
   
+     <servlet>
+    <servlet-name>UPdateAndDeleteServlet</servlet-name>
+    <servlet-class>co.jp.ygcBook.servlet.UPdateAndDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UPdateAndDeleteServlet</servlet-name>
+    <url-pattern>/updateOrdelete</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   
   
   

@@ -52,7 +52,7 @@ List<Hobby> hobbylist = (List<Hobby>)request.getAttribute("data1");
         </tr>
         <% for (UserInfo userInfo : list) { %>
             <tr>
-                <td><%= userInfo.getUsername()%></td>
+                <td><a href ="updateOrdelete?usernameForUAD=<%= userInfo.getUsername()%>"><%= userInfo.getUsername()%></a></td>
                 <td><%= userInfo.getGender().toString().replace("0", "男").replace("1", "女") %></td>
                 <td><%= userInfo.getMajor().toString().replace("0", "英语").replace("1", "数学").replace("2", "体育")  %></td>
                 <%if(hobbylist != null){%>

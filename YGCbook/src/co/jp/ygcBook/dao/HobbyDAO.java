@@ -36,7 +36,22 @@ public class HobbyDAO {
 	// 搜索机能的方法
 	public List<Hobby> select(String username) {
 
-		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby  FROM hobby GROUP BY username ";
+		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby  FROM hobby GROUP BY username";
+
+		// 如果username存在，那么就把username放入sql文当中作为筛选条件
+		List<Hobby> list = new ArrayList<Hobby>();
+		try { 
+			list = template.selete(sql, new Hobbymapping());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	// 搜索机能的方法
+	public Hobby selectUpdate(String username) {
+
+		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby  FROM hobby GROUP BY username  having username= '" + username + "'";
 
 		// 如果username存在，那么就把username放入sql文当中作为筛选条件
 		List<Hobby> list = new ArrayList<Hobby>();
@@ -46,6 +61,7 @@ public class HobbyDAO {
 			e.printStackTrace();
 		}
 
-		return list;
+		return list.get(0);
 	}
+	
 }
