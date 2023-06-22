@@ -37,7 +37,7 @@ Hobby hobby = (Hobby)request.getAttribute("hobby");
         
         <label for="gender">性别:</label>
         <input type="radio" id="male" name="gender" value="0" <%= userInfo.getGender().equals("0") ? "checked" : "" %>>男
-        <input type="radio" id="female" name="gender" value="2" <%= userInfo.getGender().equals("1") ? "checked" : "" %>>女<br><br>
+        <input type="radio" id="female" name="gender" value="1" <%= userInfo.getGender().equals("1") ? "checked" : "" %>>女<br><br>
 
         <label for="major">专业:</label>
         <select id="major" name="major">

@@ -36,7 +36,7 @@ public class HobbyDAO {
 	// 搜索机能的方法
 	public List<Hobby> select(String username) {
 
-		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby  FROM hobby GROUP BY username";
+		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby  FROM hobby where delFlag = 0 GROUP BY username";
 
 		// 如果username存在，那么就把username放入sql文当中作为筛选条件
 		List<Hobby> list = new ArrayList<Hobby>();
@@ -50,8 +50,8 @@ public class HobbyDAO {
 	}
 	// 搜索机能的方法
 	public Hobby selectUpdate(String username) {
-
-		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby  FROM hobby GROUP BY username  having username= '" + username + "'";
+		
+		String sql = "SELECT username, GROUP_CONCAT(hobby SEPARATOR ', ') AS hobby FROM hobby WHERE delFlag = 0 AND username = '" + username + "' GROUP BY username";
 
 		// 如果username存在，那么就把username放入sql文当中作为筛选条件
 		List<Hobby> list = new ArrayList<Hobby>();
