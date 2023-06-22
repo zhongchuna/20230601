@@ -64,4 +64,29 @@ public class HobbyDAO {
 		return list.get(0);
 	}
 	
+	// 更新机能的方法
+	public boolean  updateByUsername(String username)  {
+		
+
+		String sql = "update hobby set delFlag = 1  where username =? and delFlag = 0";
+		
+		int row = 0;
+		
+		Object[] values =new Object[]{username};
+
+			try {
+				row = template.updata(sql,values);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+
+		return true;
+	}
+
+	
 }

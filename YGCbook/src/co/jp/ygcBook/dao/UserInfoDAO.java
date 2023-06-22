@@ -31,7 +31,7 @@ public class UserInfoDAO {
 	// 搜索机能的方法
 	public List<UserInfo> select(String username, String gender, String major) {
 
-		String sql = "select * from userinfo where 1=1 ";
+		String sql = "select * from userinfo where 1=1  and delFlag = 0 ";
 
 		// 如果username存在，那么就把username放入sql文当中作为筛选条件
 		if (!"".equals(username)) {
@@ -42,7 +42,7 @@ public class UserInfoDAO {
 		if (!"".equals(gender)) {
 			sql = sql + " and gender ='" + gender + "' ";
 		}
-		
+
 		// 如果major存在，那么就把major放入sql文当中作为筛选条件
 		if (!"".equals(major)) {
 			sql = sql + " and major ='" + major + "'";
@@ -56,12 +56,11 @@ public class UserInfoDAO {
 
 		return list;
 	}
-	
-	
+
 	// 搜索机能的方法
 	public UserInfo select(String username) {
 
-		String sql = "select * from userinfo where username ='" + username + "'";
+		String sql = "select * from userinfo where username ='" + username + "'  and delFlag = 0";
 
 		List<UserInfo> list = new ArrayList<UserInfo>();
 		try {
@@ -73,5 +72,28 @@ public class UserInfoDAO {
 		return list.get(0);
 	}
 
+	// 更新机能的方法
+	public boolean  updateByUsername(String username)  {
+		
+
+		String sql = "update userinfo set delFlag = 1  where username =? and delFlag = 0";
+		
+		int row = 0;
+		
+		Object[] values =new Object[]{username};
+
+			try {
+				row = template.updata(sql,values);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+
+		return (row == 1);
+	}
 
 }

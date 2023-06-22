@@ -13,6 +13,16 @@ Hobby hobby = (Hobby)request.getAttribute("hobby");
 <html>
 <head>
     <title>更新页面</title>
+    <script>
+    function Update(){ 
+    	document.getElementById("handle").value = '1'
+    }
+    
+    function Delete(){
+    	document.getElementById("handle").value = '2'
+    	
+    }
+    </script>
 </head>
 <body>
     <h1>更新页面</h1>
@@ -43,9 +53,11 @@ Hobby hobby = (Hobby)request.getAttribute("hobby");
 
         <label for="intro">简介:</label><br>
         <textarea id="intro" name="intro" rows="4" cols="50" ><%=userInfo.getIntro()%></textarea><br><br>
-	<% }%> 
-	    <input type="submit" value="修改">
-        <input type="submit" value="删除">
+        
+        <input type = "hidden" id ="handle" name ="handle">
+ 	    <input type="submit" value="修改" onClick="Update()">
+        <input type="submit" value="删除" onClick="Delete()">
+        <% }%>
     </form>
 </body>
 </html>
