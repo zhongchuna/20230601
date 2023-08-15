@@ -3,11 +3,45 @@
 <html>
 <head>
     <title>注册页面</title>
+        <script>
+        function validateForm() {
+            // 获取表单元素
+            var passwordInput = document.getElementById("password");
+            var hobbyInputs = document.querySelectorAll("input[name='hobby']:checked");
+            var majorSelect = document.getElementById("major");
+
+            // 验证密码长度
+            if (passwordInput.value.length < 6 || passwordInput.value.length > 15) {
+                alert("密码长度必须在6到15个字符之间。");
+                return false;
+            }
+
+            // 验证密码是否包含大写字母
+            if (!/[A-Z]/.test(passwordInput.value)) {
+                alert("密码必须包含至少一个大写字母。");
+                return false;
+            }
+
+            // 验证是否选择了至少一个爱好
+            if (hobbyInputs.length === 0) {
+                alert("请选择至少一个爱好。");
+                return false;
+            }
+
+            // 验证是否选择了专业
+            if (majorSelect.value === "") {
+                alert("请选择一个专业。");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
     <h1>注册页面</h1>
 
-    <form method="get" action="userRegister">
+    <form method="get" action="userRegister" onsubmit="return validateForm()">
         <label for="username">姓名:</label>
         <input type="text" id="username" name="username" required><br><br>
 
@@ -20,6 +54,7 @@
 
         <label for="major">专业:</label>
         <select id="major" name="major">
+        	<option value="">-</option>
             <option value="0">英语</option>
             <option value="1">数学</option>
             <option value="2">体育</option>
