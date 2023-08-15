@@ -33,6 +33,7 @@
 	
 	<input type ="button"  value="新会员注册" onclick="window.location.href='userRegister.jsp'"></button>
 	<input type ="button"  value="新会员搜索" onclick="window.location.href='Search.jsp'"></button>
+	<input type ="button"  value="图书管理页面" onclick="window.location.href='book.jsp'"></button>
 	
     <td> 
       <table width="100%" border="0" cellpadding="0" cellspacing="0">

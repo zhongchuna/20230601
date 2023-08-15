@@ -1,4 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
 </head>
 <body>
     <h1>添加图书</h1>
-    <form action="AddBookServlet" method="post">
+    <form action="AddBook" method="post" accept-charset="UTF-8">
         标题: <input type="text" name="title"><br>
         作者: <input type="text" name="author"><br>
         价格: <input type="text" name="price"><br>

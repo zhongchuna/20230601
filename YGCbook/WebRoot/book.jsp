@@ -24,12 +24,12 @@
                 <td>${book.price}</td>
                 <td>${book.inventory}</td>
                 <td>
-                    <a href="edit.jsp?bookId=${book.bookId}">编辑</a>
-                    <a href="delete.jsp?bookId=${book.bookId}">删除</a>
+                    <a href="bookEdit.jsp?bookId=${book.bookId}">编辑</a>
+                    <a href="bookDelete.jsp?bookId=${book.bookId}">删除</a>
                 </td>
             </tr>
         </c:forEach>
     </table>
-    <a href="add.jsp">添加图书</a>
+    <a href="bookAdd.jsp">添加图书</a>
 </body>
 </html>

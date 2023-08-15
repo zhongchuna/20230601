@@ -348,7 +348,15 @@
     <url-pattern>/updateOrdelete</url-pattern>
   </servlet-mapping>
   
-  
+  <!-- 图书添加页面servlet -->
+    <servlet>
+    <servlet-name>AddBookServlet</servlet-name>
+    <servlet-class>co.jp.ygcBook.servlet.AddBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddBookServlet</servlet-name>
+    <url-pattern>/AddBook</url-pattern>
+  </servlet-mapping>
   
   
   
