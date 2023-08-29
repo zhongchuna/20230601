@@ -357,6 +357,15 @@
     <servlet-name>AddBookServlet</servlet-name>
     <url-pattern>/AddBook</url-pattern>
   </servlet-mapping>
+   <!-- 图书搜索页面servlet -->
+    <servlet>
+    <servlet-name>FindBookServlet</servlet-name>
+    <servlet-class>co.jp.ygcBook.servlet.FindBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindBookServlet</servlet-name>
+    <url-pattern>/Book</url-pattern>
+  </servlet-mapping>
   
   
   

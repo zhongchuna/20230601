@@ -1,6 +1,8 @@
 package co.jp.ygcBook.servlet;
 
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

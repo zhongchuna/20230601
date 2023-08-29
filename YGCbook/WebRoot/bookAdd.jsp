@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>添加图书</h1>
-    <form action="AddBook" method="post" accept-charset="UTF-8">
+    <form action="AddBook" method="get">
         标题: <input type="text" name="title"><br>
         作者: <input type="text" name="author"><br>
         价格: <input type="text" name="price"><br>

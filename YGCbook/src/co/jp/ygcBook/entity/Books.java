@@ -37,6 +37,7 @@ public class Books {
 	}
 	public void setInventory(String inventory) {
 		this.inventory = inventory;
+		
 	}
 	public Books(String bookId, String title, String author, String price, String inventory) {
 		super();
@@ -45,6 +46,13 @@ public class Books {
 		this.author = author;
 		this.price = price;
 		this.inventory = inventory;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Books [bookId=" + bookId + ", title=" + title + ", author=" + author + ", price=" + price
+				+ ", inventory=" + inventory + "]";
 	}
 	public Books() {
 		super();
