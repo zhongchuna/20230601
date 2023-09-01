@@ -22,9 +22,18 @@ public class FindBookServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		// ID
+		String bookId = req.getParameter("bookId");
+		// 性別
+		String title = req.getParameter("title");
+		// 专业
+		String author = req.getParameter("author");
+		
 	    BooksDAO booksDAO = new BooksDAO();
 	    
-		List<Books> bookList = booksDAO.FindBook();
+	    List<Books> bookList = booksDAO.select(bookId,title,author);
+	    
+		//List<Books> bookList = booksDAO.FindBook();
 		req.setAttribute("data", bookList);
 		
 		

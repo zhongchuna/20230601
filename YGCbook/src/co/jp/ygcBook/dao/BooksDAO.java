@@ -29,7 +29,7 @@ public class BooksDAO {
 		return (row == 1);
 	}
 
-	// 搜索机能的方法
+	 //搜索机能的方法
 	public List<Books> FindBook() {
 
 		String sql = "select * from books ";
@@ -43,5 +43,34 @@ public class BooksDAO {
 
 		return list;
 	}
+	
+	// 搜索机能的方法
+		public List<Books> select(String bookId,String title, String author) {
+
+			String sql = "select * from books where 1=1 ";
+			
+			// 如果存在，那么就放入sql文当中作为筛选条件
+			if (!"".equals(bookId)) {
+				sql = sql + " and bookId ='" + bookId + "' ";
+			}
+			// 如果存在，那么就放入sql文当中作为筛选条件 
+			if (!"".equals(title)) {
+				sql = sql + " and title ='" + title + "' ";
+			}
+
+			// 如果存在，那么就放入sql文当中作为筛选条件
+			if (!"".equals(author)) {
+				sql = sql + " and author ='" + author + "'";
+			}
+			List<Books> list = new ArrayList<Books>();
+			try {
+				list = template.selete(sql, new Booksmapping());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return list;
+		}
+
 
 }

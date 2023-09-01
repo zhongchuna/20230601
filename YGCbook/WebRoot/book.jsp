@@ -11,8 +11,17 @@
     <title>图书列表</title>
 </head>
 <body>
+    <a href="bookAdd.jsp">添加图书</a>
     <h1>图书列表</h1>
     <form action="Book" method="get">
+        <label for="">圖書ID    ：</label>
+        <input type="text" id="bookId" name="bookId"><br><br>  
+        <label for="">圖書名称：</label>
+        <input type="text" id="title" name="title"><br><br>  
+        <label for="">圖書作者：</label>
+        <input type="text" id="author" name="author"><br><br>    
+        <input type="submit" value="搜索"><br><br>
+    </form>
     <table border="1">
         <tr>
         <% if (bookList != null) { %>
@@ -41,9 +50,7 @@
 
           
     </table>
+   
     
-    <a href="bookAdd.jsp">添加图书</a>
-    <button type =submit>検索</button>
-    </form>
 </body>
 </html>
